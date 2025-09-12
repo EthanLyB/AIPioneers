@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Turing: The Father of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-btn {
+            @apply px-4 py-2 mx-1 rounded-full text-sm font-semibold transition-colors duration-300;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <main class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden my-8">
+
+        <!-- Navigation -->
+        <nav class="bg-blue-600 p-4 shadow-lg flex flex-wrap justify-center space-x-2 md:space-x-4">
+            <button class="nav-btn bg-white text-blue-600 hover:bg-gray-100" onclick="showSlide('slide1')">Home</button>
+            <button class="nav-btn bg-white text-blue-600 hover:bg-gray-100" onclick="showSlide('slide2')">Early Life & WWII</button>
+            <button class="nav-btn bg-white text-blue-600 hover:bg-gray-100" onclick="showSlide('slide3')">AI Contributions</button>
+            <button class="nav-btn bg-white text-blue-600 hover:bg-gray-100" onclick="showSlide('slide4')">Modern Influence</button>
+        </nav>
+
+        <!-- Slides Container -->
+        <div class="p-8 md:p-12">
+
+            <!-- Slide 1: Introduction -->
+            <section id="slide1" class="slide active text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Alan Turing: The Father of Artificial Intelligence</h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8">
+                    Explore the life and legacy of Alan Turing, the visionary mathematician and computer scientist whose work laid the foundation for modern computing and artificial intelligence.
+                </p>
+                <div class="w-full h-auto max-w-md mx-auto rounded-3xl overflow-hidden shadow-lg mb-8">
+                    <img src="https://placehold.co/800x600/1e40af/ffffff?text=Alan+Turing" alt="A stylized image of Alan Turing" class="w-full h-auto object-cover">
+                </div>
+            </section>
+
+            <!-- Slide 2: Early Life & WWII Contributions -->
+            <section id="slide2" class="slide">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Early Life and World War II</h2>
+                <p class="text-gray-600 text-lg mb-4">
+                    Born in London in 1912, Alan Turing was a brilliant mind from a young age. His most famous early theoretical contribution was the "Turing Machine" in 1936, a conceptual device that laid the groundwork for the modern computer.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Turing+Machine+Concept" alt="A simple illustration of a Turing Machine" class="w-full rounded-2xl shadow-md">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-700 mb-2">The Turing Machine</h3>
+                        <p class="text-gray-600">
+                            This abstract model of computation demonstrated that a simple device could solve any computable problem, a revolutionary idea.
+                        </p>
+                        <a href="https://www.youtube.com/embed/gJQTFhkhwPA" target="_blank" class="mt-4 inline-block bg-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-blue-700 transition-colors">Watch Turing Machine Explained</a>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-700 mb-2 mt-8">Codebreaking at Bletchley Park</h3>
+                <p class="text-gray-600 text-lg mb-4">
+                    During World War II, Turing led a team at Bletchley Park, the British codebreaking center. He was a key figure in developing techniques to decipher messages encrypted by the German Enigma machine, which is credited with shortening the war by an estimated two years and saving millions of lives.
+                </p>
+                <a href="https://www.youtube.com/embed/V4V2bpZlqx8" target="_blank" class="inline-block bg-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-blue-700 transition-colors">See How the Enigma Machine Worked</a>
+            </section>
+
+            <!-- Slide 3: Contributions to AI -->
+            <section id="slide3" class="slide">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Foundational Concepts of AI</h2>
+                <p class="text-gray-600 text-lg mb-4">
+                    Turing’s most enduring legacy in AI comes from his 1950 paper, "Computing Machinery and Intelligence," where he posed the question, "Can machines think?" To explore this, he introduced the concept now known as the "Turing Test."
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Turing+Test+Concept" alt="A simple illustration of the Turing Test" class="w-full rounded-2xl shadow-md">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-700 mb-2">The Turing Test</h3>
+                        <p class="text-gray-600">
+                            The test proposes that if a human judge, through a text-based conversation, cannot distinguish a machine from a human, then the machine can be said to "think."
+                        </p>
+                        <a href="https://builtin.com/artificial-intelligence/turing-test" target="_blank" class="mt-4 inline-block bg-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-blue-700 transition-colors">Read About the Turing Test</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Modern Day Influence -->
+            <section id="slide4" class="slide">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Legacy in Modern AI</h2>
+                <p class="text-gray-600 text-lg mb-4">
+                    Alan Turing’s work continues to shape the field of AI today. His vision of a "thinking machine" inspired generations of computer scientists and led to the creation of everything from expert systems to complex neural networks.
+                </p>
+                <ul class="list-disc list-inside space-y-4 text-gray-600 text-lg mb-8">
+                    <li><span class="font-bold">Neural Networks:</span> His ideas on "learning machines" and simple computational units are precursors to modern neural networks, the foundation of deep learning.</li>
+                    <li><span class="font-bold">Natural Language Processing (NLP):</span> The Turing Test's emphasis on natural language conversation is a central challenge in NLP, driving the development of chatbots and large language models.</li>
+                    <li><span class="font-bold">Computer Science Theory:</span> The Turing Machine remains a core concept in theoretical computer science, used to define the limits of what can be computed.</li>
+                </ul>
+                <div class="w-full h-auto max-w-md mx-auto rounded-3xl overflow-hidden shadow-lg mb-8">
+                    <img src="https://placehold.co/800x600/3b82f6/ffffff?text=Modern+AI" alt="An abstract image representing modern AI and technology" class="w-full h-auto object-cover">
+                </div>
+                <a href="https://www.youtube.com/watch?v=delZb6b9Yb8" target="_blank" class="inline-block bg-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-blue-700 transition-colors">Discover Turing's Enduring Legacy</a>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript for slide functionality
+        function showSlide(slideId) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.getElementById(slideId).classList.add('active');
+        }
+
+        // Initial state: show the first slide
+        window.onload = function() {
+            showSlide('slide1');
+        };
+    </script>
+
+</body>
+</html>

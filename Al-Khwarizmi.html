@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Khwarizmi: The Father of Algebra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            background-color: #1a202c; /* Dark background */
+        }
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .slide {
+            width: 90%;
+            max-width: 1200px;
+            height: 80%;
+            max-height: 700px;
+            background-color: #2d3748; /* Slightly lighter dark color */
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            padding: 2.5rem;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #e2e8f0;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            transform: scale(0.9);
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+        .slide.active {
+            display: flex;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #63b3ed; /* Light blue accent */
+        }
+        .slide-content {
+            font-size: 1.25rem;
+            line-height: 1.75;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        .nav-button {
+            background-color: #4c51bf; /* Darker blue */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-button:hover {
+            background-color: #3b3f8f; /* Slightly darker hover color */
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background-color: #6b7280; /* Gray for disabled */
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .resource-button {
+            background-color: #68d391; /* Green accent */
+            color: black;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .resource-button:hover {
+            background-color: #48bb78;
+            transform: translateY(-2px);
+        }
+        .image-container {
+            margin: 2rem auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col justify-center items-center h-screen overflow-hidden">
+    <div class="presentation-container">
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide active">
+            <h1 class="slide-title">Muhammad ibn Musa al-Khwarizmi</h1>
+            <p class="slide-content">
+                Explore the life and groundbreaking legacy of the Persian polymath whose work laid the foundation for modern mathematics and computer science.
+            </p>
+            <div class="image-container">
+                <img src="https://placehold.co/800x450/3b82f6/ffffff?text=Statue+of+al-Khwarizmi" alt="Statue of al-Khwarizmi">
+            </div>
+            <button class="nav-button" onclick="nextSlide()">Start Presentation</button>
+        </div>
+
+        <!-- Slide 2: Early Life and the House of Wisdom -->
+        <div id="slide-2" class="slide">
+            <h2 class="slide-title">Early Life and the House of Wisdom</h2>
+            <p class="slide-content">
+                Born around 780 CE in Persia, Al-Khwarizmi was a scholar at the House of Wisdom in Baghdad. This renowned intellectual center was a hub for translating and advancing scientific knowledge during the Islamic Golden Age. Al-Khwarizmi played a pivotal role in synthesizing knowledge from Greek, Indian, and other sources.
+            </p>
+            <div class="image-container">
+                <img src="https://placehold.co/800x450/4f46e5/ffffff?text=The+House+of+Wisdom" alt="Illustration of the House of Wisdom">
+            </div>
+            <div class="button-group">
+                <button class="nav-button" onclick="prevSlide()">Previous</button>
+                <a href="https://www.britannica.com/topic/House-of-Wisdom" target="_blank" class="resource-button">Learn About the House of Wisdom</a>
+                <button class="nav-button" onclick="nextSlide()">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 3: The Birth of Algebra -->
+        <div id="slide-3" class="slide">
+            <h2 class="slide-title">The Birth of Algebra</h2>
+            <p class="slide-content">
+                Al-Khwarizmi's most significant work was his book, <i>Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala</i>. The title gave us the modern word "algebra." The book presented the first systematic methods for solving linear and quadratic equations. His techniques of "reduction" and "balancing" formed the bedrock of this new discipline.
+            </p>
+            <div class="image-container">
+                <img src="https://placehold.co/800x450/f97316/ffffff?text=Algebraic+Equation+Example" alt="An example of a quadratic equation">
+            </div>
+            <div class="button-group">
+                <button class="nav-button" onclick="prevSlide()">Previous</button>
+                <a href="https://www.youtube.com/watch?v=Fj7n0aYgYtE" target="_blank" class="resource-button">Watch an Intro to Algebra</a>
+                <button class="nav-button" onclick="nextSlide()">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Algorithm's Name -->
+        <div id="slide-4" class="slide">
+            <h2 class="slide-title">The Origin of "Algorithm"</h2>
+            <p class="slide-content">
+                The word "algorithm" is a Latinized version of Al-Khwarizmi's name. His work on arithmetic, which introduced the Hindu-Arabic numeral system (including the concept of zero) to the Western world, provided a clear, step-by-step procedure for calculations. This systematic problem-solving approach is the fundamental concept behind all modern algorithms.
+            </p>
+            <div class="image-container">
+                <img src="https://placehold.co/800x450/ef4444/ffffff?text=Flowchart+of+an+Algorithm" alt="A simple flowchart illustrating an algorithm">
+            </div>
+            <div class="button-group">
+                <button class="nav-button" onclick="prevSlide()">Previous</button>
+                <a href="https://www.algaurizin.com/html/scholars/al-khwarizmi.html" target="_blank" class="resource-button">Read About His Legacy in AI</a>
+                <button class="nav-button" onclick="nextSlide()">Next</button>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Al-Khwarizmi's Enduring Legacy -->
+        <div id="slide-5" class="slide">
+            <h2 class="slide-title">An Enduring Legacy in AI and Computing</h2>
+            <p class="slide-content">
+                Al-Khwarizmi's work is not only the basis for algebra but also a cornerstone of modern computer science and artificial intelligence. Every process, from search engine rankings to machine learning, relies on the algorithmic thinking he pioneered over 1,200 years ago.
+            </p>
+            <div class="image-container">
+                <img src="https://placehold.co/800x450/34d399/ffffff?text=Modern+Computer+Code" alt="Lines of computer code">
+            </div>
+            <div class="button-group">
+                <button class="nav-button" onclick="prevSlide()">Previous</button>
+                <a href="https://researchgate.net/publication/387711108_Muhammad_ibn_Musa_al-Khwarizmi_The_Pioneer_of_Algorithms_and_His_Enduring_Legacy_in_Artificial_Intelligence" target="_blank" class="resource-button">Read a Research Paper on This Topic</a>
+                <button class="nav-button" onclick="restartPresentation()">Restart</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+            currentSlide = n;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        function restartPresentation() {
+            showSlide(0);
+        }
+
+        // Initialize with the first slide
+        window.onload = () => showSlide(0);
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Boole: Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 960px;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .slide-content {
+            flex-grow: 1;
+        }
+        .slide-image-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <!-- Slide 1: Early Life -->
+        <div id="slide-1" class="slide active">
+            <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">George Boole: Pioneer of AI</h1>
+            <div class="slide-content">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Early Life</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <img class="w-full md:w-1/2 rounded-lg shadow-md" src="https://placehold.co/400x300/a3e635/1f2937?text=George+Boole" alt="Placeholder image of George Boole">
+                    <div class="flex-1">
+                        <p class="text-lg text-gray-600 mb-4">
+                            George Boole was born on November 2, 1815, in Lincoln, England, to a working-class family. He had a primary school education and was largely self-taught in mathematics and languages, with some help from his father, who was a shoemaker with a passion for science.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            Due to a decline in his father's business, Boole became the breadwinner for his family at age 16, taking on a teaching position. He later opened his own school. Despite his lack of formal university education, his talent in mathematics was recognized, and in 1849, he was appointed the first Professor of Mathematics at Queen's College (now University College Cork) in Ireland.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="https://en.wikipedia.org/wiki/George_Boole" target="_blank" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Read more on Wikipedia
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Major Contributions -->
+        <div id="slide-2" class="slide">
+            <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">George Boole: Pioneer of AI</h1>
+            <div class="slide-content">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Major Contributions to Mathematics and Logic</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <img class="w-full md:w-1/2 rounded-lg shadow-md" src="https://placehold.co/400x300/fcd34d/1f2937?text=Boolean+Algebra" alt="Placeholder image of Boolean Algebra diagram">
+                    <div class="flex-1">
+                        <p class="text-lg text-gray-600 mb-4">
+                            Boole's most significant contribution was the creation of **Boolean algebra**, a new system of mathematical logic. He detailed this in two influential books:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>***The Mathematical Analysis of Logic*** (1847): In this work, he argued that logic could be treated as a branch of mathematics.</li>
+                            <li>***An Investigation of the Laws of Thought*** (1854): This is considered his masterwork, where he fully developed the system that would become known as Boolean algebra.</li>
+                        </ul>
+                        <p class="text-lg text-gray-600 mt-4">
+                            Boolean algebra simplified logic by reducing it to a system with only two values: **true** and **false**. These can be represented by binary numbers, **1** and **0**. This system, with its operators like **AND**, **OR**, and **NOT**, provided a way to express logical propositions as mathematical equations.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="https://youtu.be/S4-Tq-vjUj4" target="_blank" class="px-6 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Watch a video on Boolean Algebra
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Contributions to AI -->
+        <div id="slide-3" class="slide">
+            <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">George Boole: Pioneer of AI</h1>
+            <div class="slide-content">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Contributions to Artificial Intelligence</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <img class="w-full md:w-1/2 rounded-lg shadow-md" src="https://placehold.co/400x300/4ade80/1f2937?text=Symbolic+Logic" alt="Placeholder image of symbolic logic diagram">
+                    <div class="flex-1">
+                        <p class="text-lg text-gray-600 mb-4">
+                            Boole's work provided the conceptual foundation for what would eventually become the field of artificial intelligence. His main contribution was the idea of representing human reasoning in a symbolic, mathematical form. This concept is fundamental to the way modern computers and AI systems process information.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            His work helped bridge the gap between abstract logic and a system that could be implemented mechanically. This paved the way for the development of algorithms and computational systems that mimic human thought processes, a core goal of AI.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="https://plato.stanford.edu/entries/boole/" target="_blank" class="px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Explore the Stanford Encyclopedia of Philosophy article
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Influence on Modern AI -->
+        <div id="slide-4" class="slide">
+            <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">George Boole: Pioneer of AI</h1>
+            <div class="slide-content">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">Influence on Modern Day AI</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <img class="w-full md:w-1/2 rounded-lg shadow-md" src="https://placehold.co/400x300/818cf8/1f2937?text=Modern+AI+Illustration" alt="Placeholder image of AI illustration">
+                    <div class="flex-1">
+                        <p class="text-lg text-gray-600 mb-4">
+                            George Boole's work is the cornerstone of the digital age. His influence on modern AI can be seen in several key areas:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>**Computer Science**: In the 1930s, Claude Shannon applied Boolean algebra to the design of electronic circuits, demonstrating that logic gates could perform Boolean operations. This binary system of 1s and 0s is the language of all modern computers and, by extension, all AI systems.</li>
+                            <li>**The Logic of AI**: AI algorithms rely on logical operations to make decisions and process data. Boolean logic is used in programming languages, machine learning models, and search queries.</li>
+                            <li>**A Family Legacy**: Boole's legacy is directly linked to modern AI through his great-great-grandson, Geoffrey Hinton, a leading figure in the development of artificial neural networks and deep learning.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="https://www.ucc.ie/en/president/news/2024/the-boole-inkstand--a-legacy-of-innovation-.html" target="_blank" class="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        Read about Boole's legacy at UCC
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between mt-8">
+            <button id="prev-btn" class="px-6 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded-full shadow-md transition duration-300 transform hover:scale-105 focus:outline-none">
+                Previous
+            </button>
+            <button id="next-btn" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full shadow-md transition duration-300 transform hover:scale-105 focus:outline-none">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            slides[n].classList.add('active');
+            currentSlide = n;
+            
+            // Show/hide buttons based on slide number
+            if (currentSlide === 0) {
+                prevBtn.style.visibility = 'hidden';
+            } else {
+                prevBtn.style.visibility = 'visible';
+            }
+
+            if (currentSlide === slides.length - 1) {
+                nextBtn.style.visibility = 'hidden';
+            } else {
+                nextBtn.style.visibility = 'visible';
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Initialize presentation
+        showSlide(0);
+    </script>
+
+</body>
+</html>

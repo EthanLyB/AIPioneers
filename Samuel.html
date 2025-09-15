@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Samuel: Pioneer in Machine Learning</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --text-color: #f0f0f0;
+            --primary-color: #8be9fd;
+            --secondary-color: #bd93f9;
+            --button-bg: #44475a;
+            --button-hover: #555a6d;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            background-color: var(--card-color);
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            border: 1px solid #333;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            padding: 2.5rem;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide-content h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-image {
+            width: 280px;
+            height: auto;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            object-fit: cover;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-button {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            border: 2px solid transparent;
+        }
+
+        .nav-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .link-button {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            transform: scale(1.05);
+        }
+
+        .dots-container {
+            position: absolute;
+            bottom: 6rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #44475a;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+            box-shadow: 0 0 8px var(--primary-color);
+        }
+
+        .list-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .list-item {
+            background-color: #333;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-align: left;
+        }
+        .list-item strong {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <!-- Slide 1: Title -->
+    <div id="slide-1" class="slide active">
+        <div class="slide-content">
+            <h1>Arthur Samuel: The AI Visionary</h1>
+            <p class="text-lg text-gray-300">Discover the story of the computer scientist who pioneered the field of machine learning.</p>
+            <img src="https://placehold.co/400x400/1e1e1e/f0f0f0?text=Arthur+Samuel" alt="A portrait of Arthur Samuel, a pioneer in computer science." class="slide-image">
+            <a href="https://aivips.org/arthur-samuel/" target="_blank" class="link-button">
+                Read His Biography
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Slide 2: The IBM 701 -->
+    <div id="slide-2" class="slide">
+        <div class="slide-content">
+            <h1>The Dawn of a New Era</h1>
+            <p>Samuel's groundbreaking work happened at IBM, where he used the IBM 701, one of the first commercial computers. He saw its potential not just for calculations, but for thinking and learning.</p>
+            <img src="https://placehold.co/400x250/1e1e1e/f0f0f0?text=IBM+701+Computer" alt="A large, vintage IBM computer from the 1950s." class="slide-image">
+            <p class="text-sm text-gray-400">The IBM 701 was huge and had limited memory, but Samuel's clever programs made it do amazing things.</p>
+            <a href="https://www.ibm.com/history/early-games" target="_blank" class="link-button">
+                Explore Early Computer Games
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Checkers Program -->
+    <div id="slide-3" class="slide">
+        <div class="slide-content">
+            <h1>The Checkers Master</h1>
+            <p>In the 1950s, Samuel created a checkers program that could learn on its own. Instead of being told every move, the program improved by playing thousands of games against itself.</p>
+            
+            <div class="list-container">
+                <div class="list-item">
+                    <strong>Rote Learning</strong>
+                    <p class="text-sm mt-1">The program memorized every board position and its outcome. It remembered what worked and what didn't.</p>
+                </div>
+                <div class="list-item">
+                    <strong>Generalization</strong>
+                    <p class="text-sm mt-1">It learned to evaluate new board positions and apply its knowledge to situations it had never seen before.</p>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=4h0QpNWrPbg" target="_blank" class="link-button">
+                Watch a Video About the Program
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Slide 4: Coining the Term -->
+    <div id="slide-4" class="slide">
+        <div class="slide-content">
+            <h1>A Lasting Legacy</h1>
+            <p>Samuel's work was so revolutionary that he coined the term "machine learning" to describe it. He showed the world that computers could learn without being explicitly programmed for every single task.</p>
+            <p class="text-xl italic text-gray-400">"The field of study that gives computers the ability to learn without explicitly being programmed."</p>
+            <a href="https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-explained" target="_blank" class="link-button">
+                Learn About Machine Learning
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Slide 5: Modern Connection -->
+    <div id="slide-5" class="slide">
+        <div class="slide-content">
+            <h1>From Checkers to Today</h1>
+            <p>Samuel's ideas laid the foundation for modern AI. His work with reinforcement learning is used in everything from self-driving cars to game-playing AI like AlphaGo. He showed us that a machine can become an expert through practice.</p>
+            <a href="https://people.csail.mit.edu/brooks/idocs/Samuel.pdf" target="_blank" class="link-button">
+                Read His Original Paper
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button id="prev-btn" class="nav-button" disabled>Previous</button>
+        <button id="next-btn" class="nav-button">Next</button>
+    </div>
+
+    <!-- Slide Indicators (Dots) -->
+    <div class="dots-container">
+        <span class="dot active" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+        <span class="dot" data-slide="5"></span>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        const showSlide = (n) => {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+            currentSlide = n;
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+
+            if (currentSlide === 0) {
+                prevBtn.classList.add('opacity-40', 'cursor-not-allowed');
+            } else {
+                prevBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+            }
+            if (currentSlide === slides.length - 1) {
+                nextBtn.classList.add('opacity-40', 'cursor-not-allowed');
+            } else {
+                nextBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+            }
+        };
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (event) => {
+                const slideIndex = parseInt(event.target.dataset.slide) - 1;
+                showSlide(slideIndex);
+            });
+        });
+
+        showSlide(0);
+    });
+</script>
+</body>
+</html>

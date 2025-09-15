@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fei-Fei Li: A Pioneer of Computer Vision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-container {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide-container.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            font-weight: 700;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-8 flex items-center justify-center">
+
+    <!-- Main Presentation Container -->
+    <div class="bg-gray-800 rounded-2xl shadow-xl w-full max-w-5xl h-[80vh] flex flex-col overflow-hidden">
+        
+        <!-- Header & Navigation -->
+        <header class="p-6 border-b border-gray-700 flex justify-between items-center flex-wrap gap-4">
+            <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Fei-Fei Li: Pioneer of Modern AI</h1>
+            <nav>
+                <ul class="flex space-x-2 sm:space-x-4">
+                    <li><button class="nav-link text-sm sm:text-base px-3 py-1.5 rounded-full transition-colors duration-300 hover:bg-gray-700 active" data-slide="slide-1">Early Life</button></li>
+                    <li><button class="nav-link text-sm sm:text-base px-3 py-1.5 rounded-full transition-colors duration-300 hover:bg-gray-700" data-slide="slide-2">Contributions</button></li>
+                    <li><button class="nav-link text-sm sm:text-base px-3 py-1.5 rounded-full transition-colors duration-300 hover:bg-gray-700" data-slide="slide-3">Influence</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Slide Content Area -->
+        <main class="flex-grow p-8 overflow-y-auto relative">
+
+            <!-- Slide 1: Early Life -->
+            <div id="slide-1" class="slide-container active flex flex-col md:flex-row items-center gap-8 h-full">
+                <div class="md:w-1/2 flex-shrink-0">
+                    <h2 class="text-4xl font-extrabold mb-4 text-white">From Beijing to Princeton</h2>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Born in Beijing, China, Fei-Fei Li's journey to becoming a world-renowned AI scientist was one of immense perseverance. She immigrated to the U.S. at age 15 with her parents, facing a language barrier and significant financial hardship. Working part-time jobs while excelling in her high school studies, she earned a full scholarship to Princeton University. Her passion for physics and computer science would eventually lead her to Caltech for her Ph.D., setting the stage for her groundbreaking work.
+                    </p>
+                    <a href="https://www.ted.com/talks/fei_fei_li_how_we_re_teaching_computers_to_understand_pictures" target="_blank" class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
+                        Watch her TED Talk
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex-shrink-0 flex justify-center">
+                    <img src="https://placehold.co/400x500/1f2937/d1d5db?text=Image+of+Fei-Fei+Li" alt="Fei-Fei Li" class="rounded-xl shadow-lg border-2 border-gray-700 w-full max-w-xs md:max-w-md">
+                </div>
+            </div>
+
+            <!-- Slide 2: Major Contributions -->
+            <div id="slide-2" class="slide-container flex flex-col md:flex-row items-center gap-8 h-full">
+                <div class="md:w-1/2 flex-shrink-0 flex justify-center order-2 md:order-1">
+                    <img src="https://placehold.co/400x500/1f2937/d1d5db?text=Image+of+ImageNet" alt="ImageNet database concept" class="rounded-xl shadow-lg border-2 border-gray-700 w-full max-w-xs md:max-w-md">
+                </div>
+                <div class="md:w-1/2 flex-shrink-0 order-1 md:order-2">
+                    <h2 class="text-4xl font-extrabold mb-4 text-white">The ImageNet Revolution</h2>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Fei-Fei Li's most significant contribution is the creation of ImageNet, a massive visual database designed to "teach" computers to recognize objects in images. Launched in 2009, this project compiled a dataset of over 14 million annotated images. The ImageNet Large Scale Visual Recognition Challenge (ILSVRC) provided a crucial benchmark that spurred the deep learning revolution, proving that large datasets could be used to train highly accurate computer vision models.
+                    </p>
+                    <a href="https://www.image-net.org/" target="_blank" class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
+                        Explore the ImageNet Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide 3: Influence on Modern AI -->
+            <div id="slide-3" class="slide-container flex flex-col md:flex-row items-center gap-8 h-full">
+                <div class="md:w-1/2 flex-shrink-0">
+                    <h2 class="text-4xl font-extrabold mb-4 text-white">Human-Centered AI</h2>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Beyond her technical work, Dr. Li is a passionate advocate for Human-Centered AI (HAI), an approach that focuses on developing AI to augment human capabilities rather than replace them. As the co-founder of the Stanford Institute for Human-Centered AI, she champions the ethical and responsible development of AI. Her work has fundamentally shifted the field's focus, emphasizing the importance of large-scale data and inspiring a new generation of AI researchers.
+                    </p>
+                    <a href="https://hai.stanford.edu/" target="_blank" class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
+                        Visit Stanford's HAI
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex-shrink-0 flex justify-center">
+                    <img src="https://placehold.co/400x500/1f2937/d1d5db?text=Image+of+Stanford+HAI" alt="Stanford Institute for Human-Centered AI building" class="rounded-xl shadow-lg border-2 border-gray-700 w-full max-w-xs md:max-w-md">
+                </div>
+            </div>
+        </main>
+        
+        <!-- Navigation Buttons -->
+        <footer class="p-6 border-t border-gray-700 flex justify-between items-center">
+            <button id="prev-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                Previous
+            </button>
+            <button id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 cursor-pointer">
+                Next
+            </button>
+        </footer>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-container');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        let currentSlide = 0;
+
+        const showSlide = (index) => {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+            
+            // Scroll to the top of the content area when a new slide is shown
+            document.querySelector('main').scrollTo(0, 0);
+        };
+
+        const handleNext = () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        };
+
+        const handlePrev = () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        };
+
+        const handleNavClick = (event) => {
+            const slideId = event.target.dataset.slide;
+            const slideIndex = Array.from(slides).findIndex(slide => slide.id === slideId);
+            currentSlide = slideIndex;
+            showSlide(currentSlide);
+        };
+
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrev);
+        navLinks.forEach(link => {
+            link.addEventListener('click', handleNavClick);
+        });
+
+        // Initialize the first slide on page load
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Weizenbaum: From ELIZA to Ethical AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 800px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            border-radius: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: #1e293b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .slide h2 {
+            font-size: 1.5rem;
+            font-weight: semibold;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .image-container {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 5px; /* Adjusted to a much smaller value to move buttons to the very bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .control-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #3b82f6;
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+        }
+
+        .control-button:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .control-button:disabled {
+            background-color: #64748b;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .resource-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-link {
+            padding: 0.5rem 1.25rem;
+            background-color: #475569;
+            color: #cbd5e1;
+            font-weight: 500;
+            border-radius: 0.75rem;
+            transition: background-color 0.3s;
+        }
+
+        .resource-link:hover {
+            background-color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .presentation-container {
+                height: 90vh;
+                padding: 1rem;
+            }
+
+            .slide {
+                padding: 1.5rem;
+            }
+
+            .slide h1 {
+                font-size: 2rem;
+            }
+
+            .slide h2 {
+                font-size: 1.25rem;
+            }
+
+            .slide p {
+                font-size: 1rem;
+            }
+            .controls {
+                bottom: 5px; /* Adjusted to a smaller value for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <div class="presentation-container">
+
+        <!-- Slide 1: Introduction -->
+        <div id="slide-1" class="slide active">
+            <h1 class="text-white">Joseph Weizenbaum</h1>
+            <h2 class="text-blue-300">A Pioneer and Prophet of AI Ethics</h2>
+            <div class="image-container">
+                <img src="https://placehold.co/150x150/1e293b/e2e8f0?text=JW" alt="Placeholder image for Joseph Weizenbaum">
+            </div>
+            <p>Joseph Weizenbaum (1923-2008) was a German-American computer scientist who made significant contributions to the early development of artificial intelligence, but became one of its most outspoken critics.</p>
+        </div>
+
+        <!-- Slide 2: Early Life -->
+        <div id="slide-2" class="slide">
+            <h1 class="text-white">Early Life and Influences</h1>
+            <p class="mb-4">Born into a Jewish family in Berlin, Germany, Weizenbaum's family fled the Nazi regime in 1936, immigrating to the United States. This formative experience deeply influenced his philosophical views on technology's role in society.</p>
+            <p class="mb-4">He studied mathematics at Wayne State University before serving as a meteorologist in the U.S. Army Air Corps during World War II. After the war, he returned to his studies, eventually working on early digital and analog computers.</p>
+            <div class="resource-buttons">
+                <a href="https://www.harvardsquarelibrary.org/biographies/joseph-weizenbaum/" target="_blank" class="resource-link">Read More on His Biography</a>
+            </div>
+        </div>
+
+        <!-- Slide 3: Major Contributions -->
+        <div id="slide-3" class="slide">
+            <h1 class="text-white">The ELIZA Program (1966)</h1>
+            <p class="mb-4">Weizenbaum's most famous creation was ELIZA, one of the first conversational programs. It mimicked a Rogerian psychotherapist by using simple pattern-matching to reflect a user's input back as a question.</p>
+            <p class="mb-4">For example, if a user said "My mother made me come here," ELIZA might respond, "Who else in your family made you come here?"</p>
+            <div class="resource-buttons">
+                <a href="https://www.youtube.com/watch?v=mJrZe80G6G4" target="_blank" class="resource-link">See a Demo of ELIZA</a>
+            </div>
+        </div>
+        
+        <!-- Slide 4: The ELIZA Effect and Critique -->
+        <div id="slide-4" class="slide">
+            <h1 class="text-white">The "ELIZA Effect"</h1>
+            <p class="mb-4">Weizenbaum was shocked when users, including his own secretary, began to attribute human feelings and understanding to the program. He coined the term "ELIZA effect" to describe the tendency for people to mistakenly attribute human intelligence and empathy to a computer program.</p>
+            <p class="mb-4">This experience led him to become a major critic of AI. He argued that while computers could be powerful tools, they lacked human qualities like wisdom, judgment, and compassion, and should never be used to make decisions requiring these traits.</p>
+            <div class="resource-buttons">
+                <a href="https://builtin.com/artificial-intelligence/eliza-effect" target="_blank" class="resource-link">What is the "ELIZA Effect"?</a>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Book -->
+        <div id="slide-5" class="slide">
+            <h1 class="text-white">Computer Power and Human Reason</h1>
+            <p class="mb-4">In his seminal 1976 book, <i>Computer Power and Human Reason: From Judgment to Calculation</i>, Weizenbaum laid out his case against the uncritical adoption of AI. He made a crucial distinction between "deciding" and "choosing."</p>
+            <p class="mb-4">He argued that deciding is a computational process, while choosing requires human judgment and morality. Therefore, he believed some tasks should be reserved for humans alone.</p>
+            <div class="resource-buttons">
+                <a href="https://en.wikipedia.org/wiki/Computer_Power_and_Human_Reason" target="_blank" class="resource-link">Read a Book Summary</a>
+            </div>
+        </div>
+
+        <!-- Slide 6: Modern Influence -->
+        <div id="slide-6" class="slide">
+            <h1 class="text-white">Influence on Modern AI Ethics</h1>
+            <p class="mb-4">Weizenbaum's work is considered foundational to the field of AI ethics. His warnings about the dangers of over-reliance on technology and the importance of human judgment are more relevant than ever in the age of large language models and autonomous systems.</p>
+            <p class="mb-4">His philosophical questions continue to shape debates about AI's role in society, from healthcare to law to autonomous vehicles. He taught us that while AI can mimic human behavior, it can never truly replace the human capacity for wisdom and compassion.</p>
+            <div class="resource-buttons">
+                <a href="https://www.computer.org/csdl/magazine/ex/2008/04/mex2008040008/13rRUygT7jl" target="_blank" class="resource-link">Weizenbaum's Legacy in AI Ethics</a>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="controls">
+            <button id="prev-btn" class="control-button" disabled>Previous</button>
+            <button id="next-btn" class="control-button">Next</button>
+        </div>
+
+    </div>
+
+    <script>
+        // Main logic for the slide presentation
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+
+        function updateSlideDisplay() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlideDisplay();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideDisplay();
+            }
+        });
+
+        // Initialize the presentation on page load
+        document.addEventListener('DOMContentLoaded', updateSlideDisplay);
+    </script>
+</body>
+</html>

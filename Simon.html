@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbert Simon: The Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .presentation-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 80vh;
+            max-height: 600px;
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide-content-wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+        .slide-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+        }
+        .slide-text {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        .navigation-header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem 2.5rem;
+        }
+        .navigation-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-btn {
+            background-color: #60a5fa;
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-btn:hover {
+            background-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+        .nav-btn:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .image-container {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 2rem;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .external-link-btn {
+            background-color: #8b5cf6;
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .external-link-btn:hover {
+            background-color: #7c3aed;
+            transform: translateY(-2px);
+        }
+        .dots-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #d1d5db;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-container">
+    <div class="navigation-header">
+        <div class="dots-container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prevBtn" class="nav-btn" disabled>Previous</button>
+            <button id="nextBtn" class="nav-btn">Next</button>
+        </div>
+    </div>
+    <div class="slide-content-wrapper">
+        <div id="slide1" class="slide active">
+            <h1 class="slide-title">Herbert Simon</h1>
+            <h2 class="slide-subtitle">A Pioneer of AI and Decision Science</h2>
+            <div class="image-container">
+                
+            </div>
+            <p class="slide-text">
+                Herbert A. Simon (1916-2001) was an American political scientist, economist, sociologist, and psychologist whose work transformed multiple fields. He is considered one of the founding fathers of artificial intelligence, cognitive psychology, and organizational theory.
+            </p>
+        </div>
+
+        <div id="slide2" class="slide">
+            <h2 class="slide-title">Early Life & Major Contributions</h2>
+            <div class="image-container">
+                
+            </div>
+            <p class="slide-text">
+                Born in Milwaukee, Wisconsin, Simon attended the University of Chicago, where his interest in the science of decision-making took root. His most famous contribution outside of AI is the concept of "bounded rationality."
+            </p>
+            <p class="slide-text">
+                This theory challenged the traditional economic view of perfectly rational decision-making, arguing that human decisions are limited by available time, information, and cognitive capacity. Instead of finding the perfect solution, people "satisfice" by choosing the first "good enough" option.
+            </p>
+        </div>
+
+        <div id="slide3" class="slide">
+            <h2 class="slide-title">Pioneering Artificial Intelligence</h2>
+            <div class="image-container">
+                
+            </div>
+            <p class="slide-text">
+                Simon, along with Allen Newell and J.C. Shaw, developed what is considered the first artificial intelligence program, the Logic Theorist (1956). The program was designed to mimic human problem-solving skills and was able to prove theorems from Alfred North Whitehead and Bertrand Russell's <i>Principia Mathematica</i>.
+            </p>
+            <p class="slide-text">
+                They followed this with the General Problem Solver (GPS) in 1957, which was a more ambitious project aimed at creating a universal problem-solving machine using "means-ends analysis" to reduce the difference between a current state and a goal state.
+            </p>
+        </div>
+
+        <div id="slide4" class="slide">
+            <h2 class="slide-title">Influence on Modern AI</h2>
+            <div class="image-container">
+                
+            </div>
+            <p class="slide-text">
+                Herbert Simon's work laid the theoretical groundwork for modern AI by focusing on the simulation of human thought processes. His research established the idea of a machine capable of symbolic reasoning and problem-solving, which is a core concept in much of today's AI. His insights into how humans make decisions continue to influence the design of AI systems.
+            </p>
+            <a href="https://simoninstitute.ch/blog/post/how-computers-will-continue-to-shape-the-world-herbert-a-simon-video-transcript" target="_blank" class="external-link-btn hover:scale-105 transition-transform">
+                Watch Simon's Final Talk
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+                dots[i].classList.add('active');
+            }
+        });
+        updateButtons();
+    }
+
+    function updateButtons() {
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === slides.length - 1;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    });
+
+    // Initial state
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>

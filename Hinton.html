@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey Hinton: The Godfather of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            transition: background-color 0.5s ease;
+        }
+        .slide-container {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 1.5rem;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+        .slide-content {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .slide-content.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .slide-image {
+            max-height: 350px;
+            width: auto;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button {
+            transition: transform 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+        .resource-btn {
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .resource-btn:hover {
+            background-color: #357bd8;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="max-w-4xl mx-auto py-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8">
+            Geoffrey Hinton: The Godfather of AI
+        </h1>
+        <div id="presentation-container" class="slide-container">
+            <div id="slide-content" class="slide-content active"></div>
+        </div>
+        <div class="flex justify-between mt-8 max-w-lg mx-auto">
+            <button id="prev-btn" class="bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-full nav-button shadow-lg hover:bg-gray-300 transition-colors duration-300">
+                &larr; Previous
+            </button>
+            <button id="next-btn" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-full nav-button shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                Next &rarr;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = [
+                {
+                    title: "Who is Geoffrey Hinton?",
+                    content: "Known as the 'Godfather of AI,' Geoffrey Hinton is a British-Canadian cognitive psychologist and computer scientist. His groundbreaking work on neural networks and deep learning has fundamentally reshaped the field of artificial intelligence.",
+                    image: "https://placehold.co/600x400/3B82F6/ffffff?text=Geoffrey+Hinton",
+                    buttons: []
+                },
+                {
+                    title: "Early Life & Academic Journey",
+                    content: "Hinton was born in London and is a great-great-grandson of the logician George Boole. He earned his BA in experimental psychology from Cambridge University in 1970 and his PhD in AI from the University of Edinburgh in 1978. Despite skepticism from peers, he pursued his belief that neural networks were key to building true intelligence.",
+                    image: "https://placehold.co/600x400/9CA3AF/ffffff?text=Academic+Pursuits",
+                    buttons: []
+                },
+                {
+                    title: "The Backpropagation Algorithm",
+                    content: "In 1986, Hinton co-authored a seminal paper that popularized the backpropagation algorithm. This method allows neural networks to learn from errors by propagating a signal backward through the network, adjusting weights to improve accuracy. This was a crucial step in making neural networks practical for complex tasks.",
+                    image: "https://placehold.co/600x400/F59E0B/ffffff?text=Backpropagation+Diagram",
+                    buttons: [
+                        { text: "Learn About Backpropagation", url: "https://www.youtube.com/watch?v=XE3krf3CQls" }
+                    ]
+                },
+                {
+                    title: "Boltzmann Machines and Unsupervised Learning",
+                    content: "Hinton's work extends to a class of neural networks called Boltzmann machines, which can learn patterns in data without explicit labels (unsupervised learning). He demonstrated that by stacking these networks, known as Deep Belief Networks, they could solve previously intractable problems in areas like image and speech recognition.",
+                    image: "https://placehold.co/600x400/D97706/ffffff?text=Boltzmann+Machine+Network",
+                    buttons: [
+                        { text: "Illustration of a Boltzmann Machine", url: "https://en.wikipedia.org/wiki/Boltzmann_machine" }
+                    ]
+                },
+                {
+                    title: "The Deep Learning Revolution",
+                    content: "Hinton's breakthroughs in algorithms and training techniques, combined with increased computing power and vast amounts of data, ignited the 'deep learning revolution' of the 2000s and 2010s. His work laid the foundation for modern AI applications, including voice assistants, facial recognition, and large language models like the one you are interacting with now.",
+                    image: "https://placehold.co/600x400/4B5563/ffffff?text=Modern+AI+Applications",
+                    buttons: [
+                        { text: "Video on Deep Learning", url: "https://www.youtube.com/watch?v=aircAruvnKk" }
+                    ]
+                },
+                {
+                    title: "Recent Career and Warnings",
+                    content: "After decades in academia and a period working at Google, Hinton left his position in 2023 to speak more freely about the potential dangers of AI. He now advocates for AI safety and urges the global community to consider the long-term risks, including the potential for job displacement and existential threats.",
+                    image: "https://placehold.co/600x400/6B7280/ffffff?text=Hinton+on+AI+Risks",
+                    buttons: [
+                        { text: "Hinton's Views on AI", url: "https://www.youtube.com/watch?v=Y7nrAOmUtRs" }
+                    ]
+                },
+                {
+                    title: "Awards and Legacy",
+                    content: "Hinton's immense contributions have been recognized with numerous honors, including the Turing Award (the 'Nobel Prize of computing') in 2018, which he shared with his collaborators Yann LeCun and Yoshua Bengio. His legacy is etched into the very fabric of modern technology, and his work continues to inspire new generations of researchers.",
+                    image: "https://placehold.co/600x400/22C55E/ffffff?text=Turing+Award",
+                    buttons: [
+                        { text: "Official U of T Profile", url: "https://discover.research.utoronto.ca/26059-geoffrey-e-hinton" }
+                    ]
+                }
+            ];
+
+            const presentationContainer = document.getElementById('presentation-container');
+            const slideContentDiv = document.getElementById('slide-content');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            let currentSlideIndex = 0;
+
+            const renderSlide = () => {
+                const slide = slides[currentSlideIndex];
+                slideContentDiv.innerHTML = `
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-700 mb-4">${slide.title}</h2>
+                    <p class="text-gray-600 text-lg md:text-xl leading-relaxed mb-4">${slide.content}</p>
+                    <img src="${slide.image}" alt="${slide.title}" class="slide-image">
+                    <div class="flex flex-wrap justify-center space-x-2 mt-4">
+                        ${slide.buttons.map(btn => `
+                            <a href="${btn.url}" target="_blank" class="resource-btn">${btn.text}</a>
+                        `).join('')}
+                    </div>
+                `;
+                slideContentDiv.classList.add('active');
+                updateButtons();
+            };
+
+            const updateButtons = () => {
+                prevBtn.disabled = currentSlideIndex === 0;
+                nextBtn.disabled = currentSlideIndex === slides.length - 1;
+                prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+                nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            };
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    slideContentDiv.classList.remove('active');
+                    setTimeout(renderSlide, 500);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlideIndex < slides.length - 1) {
+                    currentSlideIndex++;
+                    slideContentDiv.classList.remove('active');
+                    setTimeout(renderSlide, 500);
+                }
+            });
+
+            renderSlide();
+        });
+    </script>
+
+</body>
+</html>

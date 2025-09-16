@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John McCarthy: The Father of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 1024px;
+            height: 768px;
+            display: flex;
+            flex-direction: column;
+            background-color: #2d3748;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            flex-grow: 1;
+            padding: 2.5rem;
+            animation: fadeIn 0.5s ease-in-out;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .slide::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .slide-active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #63b3ed;
+        }
+
+        .slide-content {
+            font-size: 1.25rem;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .slide-facts {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .slide-facts li {
+            background-color: #4a5568;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .slide-facts li:before {
+            content: '•';
+            font-size: 1.5rem;
+            color: #9f7aea;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            background-color: #1a202c;
+            border-top: 1px solid #4a5568;
+        }
+
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #e2e8f0;
+            background-color: #63b3ed;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background-color: #4c92c4;
+        }
+
+        .nav-button:disabled {
+            background-color: #4a5568;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .slide-image {
+            max-width: 75%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-top: 1.5rem;
+        }
+
+        .link-button {
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            background-color: #9f7aea;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .link-button:hover {
+            background-color: #805ad5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-container">
+
+    <!-- Slide 1: Introduction -->
+    <div class="slide slide-active">
+        <h1 class="slide-title">John McCarthy: The Father of Artificial Intelligence</h1>
+        <p class="slide-content">John McCarthy was a brilliant American computer scientist who made monumental contributions to the fields of computer science and artificial intelligence. He is most famous for coining the term "artificial intelligence" and for developing the first AI programming language.</p>
+        <img src="https://placehold.co/400x400/314159/e2e8f0?text=John+McCarthy" alt="A portrait of John McCarthy" class="slide-image">
+        <a href="#" class="link-button" id="slide1-link">Watch a video biography</a>
+        <!-- You would replace the '#' with a real URL, e.g., 'https://www.youtube.com/watch?v=...' -->
+    </div>
+
+    <!-- Slide 2: The Dartmouth Conference -->
+    <div class="slide">
+        <h2 class="slide-title">The 1956 Dartmouth Conference</h2>
+        <p class="slide-content">In 1955, John McCarthy organized a summer workshop at Dartmouth College to explore the potential of "thinking machines." This event is considered the official birth of the field of artificial intelligence.</p>
+        <ul class="slide-facts">
+            <li>McCarthy's proposal for the conference first introduced the term "artificial intelligence."</li>
+            <li>The conference laid the foundation for AI research, distinguishing it from other fields like cybernetics.</li>
+        </ul>
+        <img src="https://placehold.co/500x300/314159/e2e8f0?text=Dartmouth+College" alt="An illustration of Dartmouth College" class="slide-image">
+        <a href="#" class="link-button" id="slide2-link">Read the original Dartmouth Conference proposal</a>
+        <!-- Replace '#' with a URL to the document. -->
+    </div>
+
+    <!-- Slide 3: Major Contributions -->
+    <div class="slide">
+        <h2 class="slide-title">Pioneering Language and Concepts</h2>
+        <p class="slide-content">McCarthy's work went far beyond naming the field. He created the essential tools and concepts that allowed AI to grow.</p>
+        <ul class="slide-facts">
+            <li><strong>LISP:</strong> Developed this programming language specifically for symbolic computation.</li>
+            <li><strong>Time-Sharing:</strong> Pioneered the concept of time-sharing, allowing multiple users to access a single computer.</li>
+            <li><strong>Symbolic AI:</strong> Championed the approach of symbolic AI, which uses logic and knowledge representation to solve problems.</li>
+        </ul>
+        <img src="https://placehold.co/600x400/314159/e2e8f0?text=LISP+Code+Snippet" alt="An illustration of LISP code" class="slide-image">
+        <a href="#" class="link-button" id="slide3-link">Learn more about the LISP language</a>
+        <!-- Replace '#' with a URL to a video or article. -->
+    </div>
+
+    <!-- Slide 4: Legacy and Influence -->
+    <div class="slide">
+        <h2 class="slide-title">Legacy and Influence on Modern AI</h2>
+        <p class="slide-content">John McCarthy's ideas have had a lasting impact, even on the AI we use today. His work laid the groundwork for many of the technologies we now take for granted.</p>
+        <ul class="slide-facts">
+            <li><strong>Cloud Computing:</strong> His vision of time-sharing directly inspired the concept of cloud computing.</li>
+            <li><strong>Reasoning Systems:</strong> His work on symbolic AI and formal logic is still a foundational element in many modern reasoning systems and knowledge graphs.</li>
+            <li><strong>Robotics and Automation:</strong> The research from the AI labs he founded at Stanford and MIT contributed significantly to robotics.</li>
+        </ul>
+        <img src="https://placehold.co/600x400/314159/e2e8f0?text=Modern+AI+Diagram" alt="An illustration of a neural network" class="slide-image">
+        <a href="#" class="link-button" id="slide4-link">Explore modern AI applications</a>
+        <!-- Replace '#' with a URL to an article on modern AI. -->
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navigation">
+        <button id="prevBtn" class="nav-button">Previous</button>
+        <div id="slide-info" class="text-lg">Slide 1 of 4</div>
+        <button id="nextBtn" class="nav-button">Next</button>
+    </div>
+
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideInfo = document.getElementById('slide-info');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('slide-active');
+            if (i === index) {
+                slide.classList.add('slide-active');
+            }
+        });
+        updateButtons();
+        updateSlideInfo();
+    }
+
+    function updateButtons() {
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === slides.length - 1;
+    }
+
+    function updateSlideInfo() {
+        slideInfo.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    });
+
+    // Initial load
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>
